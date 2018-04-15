@@ -19,6 +19,7 @@ export class SchedulePage {
 
   toast: Toast;
   schedule: Schedule = {
+    name:'',
     date: null,
     duration: 0,
     priority: '',
@@ -53,6 +54,7 @@ export class SchedulePage {
 
   resetSchedule() {
     this.schedule =  {
+      name:'',
       date: null,
       duration: 0,
       priority: '',

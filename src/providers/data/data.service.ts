@@ -65,4 +65,7 @@ addTechno(technology: Technology) {
   createSchedule(schedule: Schedule){
       this.schedules = [...this.schedules,schedule];
   }
+  getAllSchedules() {
+      return this.schedules;
+  }
 }
