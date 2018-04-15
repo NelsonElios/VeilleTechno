@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {DataProvider} from "../../providers/data/data.service";
+import {Technology} from "../../models/technology";
 
 /**
  * Generated class for the TechnoPage page.
@@ -15,11 +17,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TechnoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  categories: string[];
+
+  technology: Technology = {name:'',category:''};
+  constructor(public navCtrl: NavController, public navParams: NavParams,public dataService: DataProvider) {
   }
 
-  ionViewDidLoad() {
+  ionViewWillLoad() {
+   this.categories = this.dataService.getAllCategories();
     console.log('ionViewDidLoad TechnoPage');
   }
 
+  addTechnology() {
+    this.dataService.addTechno(this.technology);
+    this.technology = {name:'',category:''};
+  }
+
+
+  //prochain chapitre sur les schedule
 }

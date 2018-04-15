@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {DataProvider} from "../../providers/data/data.service";
+import {Schedule} from "../../models/schedule";
 
 /**
  * Generated class for the SchedulePage page.
@@ -15,11 +17,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SchedulePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  schedule: Schedule = {
+    date: null,
+    duration: 0,
+    priority: '',
+    remark: '',
+    technology: { name: '', category: ''}
+  };
+
+  categories: string[];
+  priorities: string[];
+
+
+  constructor(public navCtrl: NavController, private dataService: DataProvider) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SchedulePage');
+  ionViewWillLoad() {
+    this.categories = this.dataService.getAllCategories();
+    this.priorities = this.dataService.getAllPriorities();
+  }
+
+  createSchedule() {
+    this.dataService.createSchedule(this.schedule);
+    this.resetSchedule();
+  }
+
+  resetSchedule() {
+    this.schedule =  {
+      date: null,
+      duration: 0,
+      priority: '',
+      remark: '',
+      technology: { name: '', category: ''}
+    }
   }
 
 }
