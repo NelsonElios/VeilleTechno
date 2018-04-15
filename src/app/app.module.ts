@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {AccueilPage} from "../pages/accueil/accueil";
 import {TechnoPage} from "../pages/techno/techno";
 import {SchedulePage} from "../pages/schedule/schedule";
+import { DataProvider } from '../providers/data/data.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {SchedulePage} from "../pages/schedule/schedule";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider
   ]
 })
 export class AppModule {}
