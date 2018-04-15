@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Toast, ToastController} from 'ionic-angular';
 import {DataProvider} from "../../providers/data/data.service";
 import {Schedule} from "../../models/schedule";
 
@@ -17,6 +17,7 @@ import {Schedule} from "../../models/schedule";
 })
 export class SchedulePage {
 
+  toast: Toast;
   schedule: Schedule = {
     date: null,
     duration: 0,
@@ -29,7 +30,7 @@ export class SchedulePage {
   priorities: string[];
 
 
-  constructor(public navCtrl: NavController, private dataService: DataProvider) {
+  constructor(public navCtrl: NavController, private dataService: DataProvider, private toastCtrl: ToastController) {
 
   }
 
@@ -40,6 +41,13 @@ export class SchedulePage {
 
   createSchedule() {
     this.dataService.createSchedule(this.schedule);
+  this.toast = this.toastCtrl.create({
+    message:'creation effectuée',
+    duration:2000,
+    cssClass: 'ok'
+    }
+  );
+  this.toast.present();
     this.resetSchedule();
   }
 

@@ -14,6 +14,7 @@ import {AccueilPage} from "../pages/accueil/accueil";
 import {TechnoPage} from "../pages/techno/techno";
 import {SchedulePage} from "../pages/schedule/schedule";
 import { DataProvider } from '../providers/data/data.service';
+import {ScheduleListPage} from "../pages/schedule-list/schedule-list";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DataProvider } from '../providers/data/data.service';
     TabsPage,
     AccueilPage,
     TechnoPage,
-    SchedulePage
+    SchedulePage,
+    ScheduleListPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { DataProvider } from '../providers/data/data.service';
     TabsPage,
     AccueilPage,
     TechnoPage,
-    SchedulePage
+    SchedulePage,
+    ScheduleListPage
   ],
   providers: [
     StatusBar,
