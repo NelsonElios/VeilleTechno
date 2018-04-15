@@ -10,6 +10,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {AccueilPage} from "../pages/accueil/accueil";
+import {TechnoPage} from "../pages/techno/techno";
+import {SchedulePage} from "../pages/schedule/schedule";
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AccueilPage,
+    TechnoPage,
+    SchedulePage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AccueilPage,
+    TechnoPage,
+    SchedulePage
   ],
   providers: [
     StatusBar,
